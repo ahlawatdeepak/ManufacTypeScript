@@ -12,6 +12,11 @@ const color= AllData.map((el) => {
   });
   
   export const ScatterChart = () => {
+      
+      
+       // initializes an option object to configure the settings for a Scatter chart.
+
+      //  The Color Data and Hue Data arrays are used to populate the x-axis and y-axis data in the chart.
     const option = {
       title: {
         text: 'Color Intensity and Hue Data',
