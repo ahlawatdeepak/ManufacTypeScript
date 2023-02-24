@@ -9,7 +9,12 @@ interface AvgData {
 }
 
 export const BarChart: React.FC = () => {
+  
+  // initializes an empty object avgData to store the average values of MalicAcid for each distinct value of Alcohol in the AllData array.
+
   const avgData: AvgData = {};
+
+    //  iterates through each element in the AllData array and updates the avgData object by calculating the total MalicAcid and the number of samples for each distinct value of Alcohol.
 
   for (let item of AllData) {
     const className = item.Alcohol;
@@ -25,6 +30,8 @@ export const BarChart: React.FC = () => {
     avgData[className].numSamples++;
   }
 
+    // After calculating the average values of MalicAcid for each distinct value of Alcohol, creates an array malicAcid to store the calculated values, and an array alcohalData to store the distinct values of Alcohol.
+
   const malicAcid: number[] = [];
   const alcoholData: string[] = [];
   for (let name in avgData) {
@@ -34,6 +41,9 @@ export const BarChart: React.FC = () => {
     alcoholData.push(name);
   }
 
+  
+    // initializes an option object to configure the settings for a bar chart.
+//  The alcohalData and malicAcid arrays are used to populate the x-axis and y-axis data in the chart.
   const option = {
     title: {
       text: "Alcohol and Malic Acid Data",
